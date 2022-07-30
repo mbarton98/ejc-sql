@@ -370,6 +370,15 @@
                     WHERE UPPER(name) = '%s' "
                     (s/upper-case entity-name)))}
    ;;-------
+   :snowflake ; snowflake snowsql
+   ;;-------
+   {:owners  (default-queries :owners)
+    :schemas (default-queries :schemas)
+    :tables  (default-queries :tables)
+    :all-tables (default-queries :all-tables)
+    :columns (default-queries :columns)
+    }
+   ;;-------
    :sqlserver ; ms sql server
    ;;-------
    {:owners  (default-queries :owners)

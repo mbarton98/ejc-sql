@@ -28,7 +28,7 @@
 
 (require 'cl-lib)
 (require 'dash)
-(require 'company)
+;; (require 'company)
 (require 'ejc-completion-common)
 
 (defun ejc-company-make-candidate (candidate)
