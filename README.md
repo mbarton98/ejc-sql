@@ -1,9 +1,9 @@
-[![Emacs](https://img.shields.io/badge/Emacs-26-8e44bd.svg)](https://www.gnu.org/software/emacs/)
+[![Emacs](https://img.shields.io/badge/Emacs-27-8e44bd.svg)](https://www.gnu.org/software/emacs/)
 [![License GPL 2](https://img.shields.io/badge/license-GPL_2-green.svg)](http://www.gnu.org/licenses/gpl-2.0.txt)
 [![MELPA](https://melpa.org/packages/ejc-sql-badge.svg)](https://melpa.org/#/ejc-sql)
 [![Melpa Stable](https://stable.melpa.org/packages/ejc-sql-badge.svg)](https://stable.melpa.org/#/ejc-sql)
-[![Build Status](https://api.travis-ci.org/kostafey/ejc-sql.svg?branch=master)](https://travis-ci.org/kostafey/ejc-sql#)
-[![Coverage Status](https://coveralls.io/repos/kostafey/ejc-sql/badge.svg?branch=master)](https://coveralls.io/github/kostafey/ejc-sql?branch=master)
+[![Build Status](https://github.com/kostafey/ejc-sql/workflows/CI/badge.svg)](https://github.com/kostafey/ejc-sql/actions?query=workflow%3ACI)
+[![Coverage Status](https://coveralls.io/repos/github/kostafey/ejc-sql/badge.svg?branch=master)](https://coveralls.io/github/kostafey/ejc-sql?branch=master)
 
 # ejc-sql
 
@@ -185,13 +185,17 @@ To activate `company-quickhelp` add the following to your `.emacs`:
 <a id="minibuffer-completion"></a>
 ### Minibuffer completion
 
-By default `ido` is used as minibuffer the completion system. You can change
-this to leverage another option by editing `ejc-completion-system` and
-selecting `standard`. This will allow you to use it with any configured
-completion mechanism for example, [ivy](https://github.com/abo-abo/swiper):
+By default standard `completing-read` is used as minibuffer the completion
+system. This is allow you to use it with any configured
+completion mechanism for example, [vertico](https://github.com/minad/vertico),
+[ivy](https://github.com/abo-abo/swiper)
+or [helm](https://github.com/emacs-helm/helm).
+You can change this to `ido-completing-read`
+([ido](https://www.gnu.org/software/emacs/manual/html_mono/ido.html))
+by editing `ejc-completion-system` and selecting `ido`:
 
 ```elisp
-(setq ejc-completion-system 'standard)
+(setq ejc-completion-system 'ido)
 ```
 
 ### ElDoc
@@ -1079,7 +1083,7 @@ Increase `nrepl-sync-request-timeout`, e.g.:
 
 ## License
 
-Copyright © 2012-2020 Kostafey <kostafey@gmail.com> and
+Copyright © 2012-2023 Kostafey <kostafey@gmail.com> and
 [contributors](https://github.com/kostafey/ejc-sql/contributors)
 
 Distributed under the General Public License 2.0+
